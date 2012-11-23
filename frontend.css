@@ -1,0 +1,9 @@
+h1   { text-align: center; }
+.text { vertical-align: middle; }
+.body { 
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: center; 
+}
+.dot { text-align: left; }
+.webcam { text-align: center; }
