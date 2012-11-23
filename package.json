@@ -1,0 +1,15 @@
+{
+  "name": "rpi-firststeps",
+  "version": "0.0.1",
+  "description": "First steps with Raspberry Pi gpio and webcam",
+  "author": "Martin Ruprecht <martin.ruprecht@mayflower.de>, Michele Catalano <michele.catalano@mayflower.de>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ironpinguin/rpi-firststeps.git"
+  },
+  "dependencies": {
+    "websocket": ">= 1.0.7",
+    "exec-sync": ">= 0.1.5"
+  },
+  "engine": "node >= 0.8.0"
+}
