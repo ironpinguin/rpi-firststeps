@@ -52,7 +52,7 @@ function startUp() {
     // NOTE: if you're not sure about the JSON structure
     // check the server source code above
     if (json.type === 'status') { // first response from the server with user's color
-      var stats = JSON.parse(json.data);
+      var stats = json.data;
       console.log(stats);
       for (var led in stats) {
         console.log(led+" STAT "+stats[led]);
