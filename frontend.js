@@ -12,7 +12,6 @@ function startUp() {
   var greenLed = $("#green");
   var redLed = $("#red");
   var yellowLed = $("#yellow");
-  var webcam = $("#webcam");
   var error = $("#error");
 
   // if user is running mozilla then use it's built-in WebSocket
@@ -61,13 +60,8 @@ function startUp() {
         setSvgColor(led, stats[led]);
       }
     } else if (json.type === 'webcam') { // update webcam image
-      var date = new Date();
-      var src = webcam.src;
-      var pos = src.indexOf('?');
-      if (pos >= 0) {
-        src = src.substr(0, pos);
-      }
-      webcam.src = src + '?v=' +date.getTime();
+      var date = new Date().getTime();
+      document.images['webcam'].src = 'snap.jpg?v=' + date;
     } else {
       console.log('Hmm..., I\'ve never seen JSON like this: ', json);
     }
@@ -93,7 +87,6 @@ function socketSend(conn, led) {
   console.log("Set "+led+" to "+statInvert);
   message[led] = statInvert;
   message = JSON.stringify(message);
-  console.log("SET "+message);
   try {
     conn.send(message);
     setSvgColor(led, statInvert);
